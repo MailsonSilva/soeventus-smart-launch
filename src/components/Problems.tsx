@@ -1,5 +1,6 @@
 
 import { AlertTriangle, CheckCircle, Clock, Users, DollarSign, FileText } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Problems = () => {
   const problems = [
@@ -62,27 +63,31 @@ const Problems = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Problems */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Problems Column */}
             <div>
               <div className="flex items-center mb-8">
                 <AlertTriangle className="h-8 w-8 text-red-500 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">Problemas Comuns</h3>
               </div>
-              <div className="space-y-6">
+              <div className="grid gap-4">
                 {problems.map((problem, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-4 rounded-lg border border-red-100 bg-red-50/50">
-                    <div className="text-red-500 mt-1">{problem.icon}</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{problem.title}</h4>
-                      <p className="text-gray-600 text-sm">{problem.description}</p>
-                    </div>
-                  </div>
+                  <Card key={index} className="border-red-100 bg-red-50/50 hover:shadow-md transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="text-red-500 mt-1">{problem.icon}</div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2">{problem.title}</h4>
+                          <p className="text-gray-600 text-sm">{problem.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
 
-            {/* Solutions */}
+            {/* Solutions Column */}
             <div>
               <div className="flex items-center mb-8">
                 <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center mr-3">
@@ -90,15 +95,19 @@ const Problems = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Nossa Solução</h3>
               </div>
-              <div className="space-y-6">
+              <div className="grid gap-4">
                 {solutions.map((solution, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-4 rounded-lg border border-green-100 bg-green-50/50">
-                    <div className="mt-1">{solution.icon}</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{solution.title}</h4>
-                      <p className="text-gray-600 text-sm">{solution.description}</p>
-                    </div>
-                  </div>
+                  <Card key={index} className="border-green-100 bg-green-50/50 hover:shadow-md transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="mt-1">{solution.icon}</div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2">{solution.title}</h4>
+                          <p className="text-gray-600 text-sm">{solution.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>

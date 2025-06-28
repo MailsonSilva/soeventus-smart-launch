@@ -1,6 +1,7 @@
 
 import React from "react";
 import { ArrowRight, Calendar, Users, BarChart3 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const HowItWorks = () => {
   const steps = [
@@ -25,7 +26,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -38,48 +39,44 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          {/* Steps */}
-          <div className="space-y-16">
+          {/* Steps in Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {steps.map((step, index) => (
-              <div key={index} className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Step Content */}
-                <div className="flex-1 space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-6xl font-bold text-brand-orange/20">
-                      {step.number}
-                    </div>
-                    <div className="text-brand-orange">
-                      {step.icon}
-                    </div>
+              <Card key={index} className="relative bg-white hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-8 text-center">
+                  {/* Step Number */}
+                  <div className="text-6xl font-bold text-brand-orange/20 mb-4">
+                    {step.number}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                  
+                  {/* Icon */}
+                  <div className="text-brand-orange mb-6 flex justify-center">
+                    {step.icon}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
+                  
+                  {/* Arrow for non-last steps */}
                   {index < steps.length - 1 && (
-                    <div className="flex items-center text-brand-orange font-semibold">
-                      <span>Próximo passo</span>
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                    <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
+                      <ArrowRight className="h-8 w-8 text-brand-orange/30" />
                     </div>
                   )}
-                </div>
-
-                {/* Step Visual */}
-                <div className="flex-1">
-                  <div className="bg-gradient-to-br from-brand-orange-light/10 to-brand-orange/10 rounded-2xl p-8 h-80 flex items-center justify-center">
-                    <div className="text-brand-orange opacity-30">
-                      {React.cloneElement(step.icon, { className: "h-32 w-32" })}
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center">
             <button className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
               Começar Agora - É Grátis
             </button>

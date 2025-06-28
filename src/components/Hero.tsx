@@ -36,9 +36,8 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Social Proof */}
+          {/* Social Proof - Removido o texto "Confiado por organizadores de eventos em todo o Brasil" */}
           <div className="text-gray-500 text-sm animate-fade-in delay-600">
-            <p className="mb-4">Confiado por organizadores de eventos em todo o Brasil</p>
             <div className="flex items-center justify-center space-x-8 opacity-60">
               <div className="text-2xl font-bold">+500</div>
               <div className="w-px h-8 bg-gray-300"></div>
