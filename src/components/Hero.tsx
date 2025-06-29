@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
+  return <section className="pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
@@ -38,23 +35,11 @@ const Hero = () => {
 
           {/* Social Proof - Removido o texto "Confiado por organizadores de eventos em todo o Brasil" */}
           <div className="text-gray-500 text-sm animate-fade-in delay-600">
-            <div className="flex items-center justify-center space-x-8 opacity-60">
-              <div className="text-2xl font-bold">+500</div>
-              <div className="w-px h-8 bg-gray-300"></div>
-              <div className="text-2xl font-bold">+1.2k</div>
-              <div className="w-px h-8 bg-gray-300"></div>
-              <div className="text-2xl font-bold">98%</div>
-            </div>
-            <div className="flex items-center justify-center space-x-8 text-xs mt-1">
-              <span>Eventos Organizados</span>
-              <span>Usuários Ativos</span>
-              <span>Satisfação</span>
-            </div>
+            
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
