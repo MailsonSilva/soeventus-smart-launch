@@ -12,10 +12,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">sE</span>
-            </div>
-            <span className="text-xl font-bold text-gray-900">soEventus</span>
+            <img 
+              src="/lovable-uploads/5989655b-43e2-43a9-ac52-12cde6919822.png" 
+              alt="soEventus Logo" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -28,6 +29,9 @@ const Header = () => {
             </a>
             <a href="#pricing" className="text-gray-600 hover:text-brand-orange transition-colors">
               Preços
+            </a>
+            <a href="#blog" className="text-gray-600 hover:text-brand-orange transition-colors">
+              Blog
             </a>
             <a href="#contact" className="text-gray-600 hover:text-brand-orange transition-colors">
               Contato
@@ -65,6 +69,9 @@ const Header = () => {
               </a>
               <a href="#pricing" className="text-gray-600 hover:text-brand-orange transition-colors">
                 Preços
+              </a>
+              <a href="#blog" className="text-gray-600 hover:text-brand-orange transition-colors">
+                Blog
               </a>
               <a href="#contact" className="text-gray-600 hover:text-brand-orange transition-colors">
                 Contato

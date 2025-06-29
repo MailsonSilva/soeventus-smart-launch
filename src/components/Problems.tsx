@@ -63,53 +63,51 @@ const Problems = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Problems Column */}
-            <div>
-              <div className="flex items-center mb-8">
-                <AlertTriangle className="h-8 w-8 text-red-500 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Problemas Comuns</h3>
-              </div>
-              <div className="grid gap-4">
-                {problems.map((problem, index) => (
-                  <Card key={index} className="border-red-100 bg-red-50/50 hover:shadow-md transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="text-red-500 mt-1">{problem.icon}</div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">{problem.title}</h4>
-                          <p className="text-gray-600 text-sm">{problem.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+          {/* Problemas Comuns */}
+          <div className="mb-20">
+            <div className="flex items-center justify-center mb-8">
+              <AlertTriangle className="h-8 w-8 text-red-500 mr-3" />
+              <h3 className="text-2xl font-bold text-gray-900">Problemas Comuns</h3>
             </div>
-
-            {/* Solutions Column */}
-            <div>
-              <div className="flex items-center mb-8">
-                <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-white font-bold text-sm">sE</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Nossa Solução</h3>
-              </div>
-              <div className="grid gap-4">
-                {solutions.map((solution, index) => (
-                  <Card key={index} className="border-green-100 bg-green-50/50 hover:shadow-md transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="mt-1">{solution.icon}</div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">{solution.title}</h4>
-                          <p className="text-gray-600 text-sm">{solution.description}</p>
-                        </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {problems.map((problem, index) => (
+                <Card key={index} className="border-red-100 bg-red-50/50 hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="text-red-500 mt-1">{problem.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">{problem.title}</h4>
+                        <p className="text-gray-600 text-sm">{problem.description}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Nossa Solução */}
+          <div>
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-sm">sE</span>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900">Nossa Solução</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {solutions.map((solution, index) => (
+                <Card key={index} className="border-green-100 bg-green-50/50 hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="mt-1">{solution.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">{solution.title}</h4>
+                        <p className="text-gray-600 text-sm">{solution.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
